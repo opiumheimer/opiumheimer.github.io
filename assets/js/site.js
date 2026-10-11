@@ -3,17 +3,21 @@
 (() => {
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  // --- The latest release from GitHub: version, date, APK size, notes ---
+  // --- The latest release from GitHub: version, date, APK size, notes, the APK's SHA-256 ---
   const API = "https://api.github.com/repos/opiumheimer/opiumheimer.github.io/releases/latest";
   const KEY = "pp-release";
 
   function showRelease(r) {
-    // The versioned file (PotionPop-v1.0.4.apk) when the release has one, else PotionPop.apk.
+    // The versioned file (PotionPop-v2.0.0.apk) when the release has one, else PotionPop.apk.
     const apks = (r.assets || []).filter((a) => /^PotionPop.*\.apk$/.test(a.name));
     const apk = apks.find((a) => a.name !== "PotionPop.apk") || apks[0];
     if (apk && apk.browser_download_url) $$("[data-apk]").forEach((e) => (e.href = apk.browser_download_url));
-    if (r.tag_name) $$("[data-version]").forEach((e) => (e.textContent = r.tag_name));
+    if (r.tag_name) {
+      $$("[data-version]").forEach((e) => (e.textContent = r.tag_name));
+      $$("[data-version-num]").forEach((e) => (e.textContent = r.tag_name.replace(/^v/, "")));
+    }
     if (apk) $$("[data-size]").forEach((e) => (e.textContent = Math.round(apk.size / 1e6) + " MB"));
     if (r.published_at) {
       const d = new Date(r.published_at);
@@ -21,14 +25,23 @@
         e.textContent = "Released " + d.toLocaleDateString("en", { day: "numeric", month: "long", year: "numeric" });
       });
     }
-    const items = (r.body || "").split("\n").filter((l) => /^\s*[-*]\s+/.test(l)).map((l) => l.replace(/^\s*[-*]\s+/, ""));
+    const body = (r.body || "").split("\n").map((l) => l.trim()).filter(Boolean);
+    const plain = (t) => t.replace(/\*\*|__|`/g, "");
+    const items = body.filter((l) => /^[-*]\s+/.test(l)).map((l) => plain(l.replace(/^[-*]\s+/, "")));
     const list = $("[data-notes]");
     if (list && items.length) {
       list.replaceChildren(...items.map((t) => {
         const li = document.createElement("li");
-        li.textContent = t.replace(/\*\*|__|`/g, "");
+        li.textContent = t;
         return li;
       }));
+    }
+    const lead = body.find((l) => !/^[-*#]/.test(l) && !/SHA-256/i.test(l));
+    if (lead) $$("[data-lead]").forEach((e) => (e.textContent = plain(lead)));
+    const sha = (r.body || "").match(/SHA-256[^:]*:\s*`?([0-9a-f]{64})/i);
+    if (sha) {
+      $$("[data-sha]").forEach((e) => (e.textContent = sha[1]));
+      $$("[data-sha-row]").forEach((e) => (e.hidden = false));
     }
   }
 
@@ -47,6 +60,78 @@
     })
     .catch(() => { /* offline or rate-limited: the built-in info stays */ });
 
+  // --- Things that play once when they scroll into view ---
+  const seen = (els, fn, margin = "0px 0px -12% 0px") => {
+    if (!("IntersectionObserver" in window)) return els.forEach(fn);
+    const io = new IntersectionObserver((list) => list.forEach((e) => {
+      if (!e.isIntersecting) return;
+      io.unobserve(e.target);
+      fn(e.target);
+    }), { rootMargin: margin });
+    els.forEach((el) => io.observe(el));
+  };
+  if (still) $$(".reveal").forEach((e) => e.classList.add("in"));
+  else seen($$(".reveal"), (e) => e.classList.add("in"));
+
+  // The boss's HP bar: three hits, the white lag catching up behind the pink (the game's bar).
+  seen($$("[data-hp]"), (hp) => {
+    const max = 3600;
+    const hits = [600, 900, 750];
+    const num = $(".hp-num", hp);
+    const pop = $(".hp-hit", hp);
+    let left = max;
+    const set = () => {
+      hp.style.setProperty("--hp", (left / max) * 100 + "%");
+      num.textContent = left + "/" + max;
+    };
+    if (still) { left = max - hits.reduce((a, b) => a + b); return set(); }
+    hits.forEach((h, i) => setTimeout(() => {
+      left -= h;
+      set();
+      pop.textContent = "-" + h;
+      pop.classList.remove("go");
+      void pop.offsetWidth; // (restarts the animation)
+      pop.classList.add("go");
+    }, 700 + i * 1100));
+  }, "0px 0px -25% 0px");
+
+  // The streak row: the steps fill one by one up to 5 (the +2 bonus lights).
+  seen($$("[data-streak]"), (row) => {
+    const steps = $$("li", row);
+    const count = $(".flame b", row);
+    const to = 5;
+    const fill = (k) => {
+      steps.forEach((s, i) => s.classList.toggle("on", i < k));
+      count.textContent = k;
+      row.classList.toggle("lit", k > 0);
+    };
+    if (still) return fill(to);
+    for (let k = 1; k <= to; k++) setTimeout(() => fill(k), 300 + k * 380);
+  }, "0px 0px -20% 0px");
+
+  // --- The case board's red string, pin to pin in order ---
+  const board = $("[data-board]");
+  if (board) {
+    const svg = $(".board-string", board);
+    const pins = $$("[data-pin]", board).sort((a, b) => a.dataset.pin - b.dataset.pin).map((c) => $(".pin", c));
+    const draw = () => {
+      const box = board.getBoundingClientRect();
+      const at = pins.map((p) => {
+        const r = p.getBoundingClientRect();
+        return [r.left + r.width / 2 - box.left, r.top + r.height * 0.22 - box.top];
+      });
+      svg.setAttribute("viewBox", `0 0 ${box.width} ${box.height}`);
+      svg.innerHTML = at.slice(1).map((b, i) => {
+        const a = at[i];
+        const sag = Math.min(46, Math.hypot(b[0] - a[0], b[1] - a[1]) * 0.18); // (the string hangs a little)
+        return `<path d="M${a[0]} ${a[1]} Q${(a[0] + b[0]) / 2} ${(a[1] + b[1]) / 2 + sag} ${b[0]} ${b[1]}"/>`;
+      }).join("");
+    };
+    draw();
+    if ("ResizeObserver" in window) new ResizeObserver(draw).observe(board);
+    addEventListener("load", draw);
+  }
+
   // --- The before/after shop ---
   $$(".fixer-frame").forEach((frame) => {
     const range = $(".fixer-range", frame);
@@ -54,6 +139,21 @@
     range.addEventListener("input", set);
     set();
   });
+
+  // --- The phone dock: shown once the hero's Download button has scrolled away ---
+  const dock = $("[data-dock]");
+  const hero = $(".hero .cta-row");
+  if (dock && hero && "IntersectionObserver" in window) {
+    const near = $("#download");
+    let pastHero = false;
+    let atGet = false;
+    const paint = () => (dock.hidden = !pastHero || atGet);
+    new IntersectionObserver(([e]) => {
+      pastHero = !e.isIntersecting && e.boundingClientRect.top < 0;
+      paint();
+    }).observe(hero);
+    if (near) new IntersectionObserver(([e]) => { atGet = e.isIntersecting; paint(); }, { rootMargin: "0px 0px -30% 0px" }).observe(near);
+  }
 
   // --- The screenshot gallery: counter, progress, buttons, keys, lightbox ---
   const track = $(".track");
@@ -75,7 +175,7 @@
     };
     const go = (i) => {
       i = Math.max(0, Math.min(n - 1, i));
-      track.scrollTo({ left: items[i].offsetLeft - items[0].offsetLeft, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+      track.scrollTo({ left: items[i].offsetLeft - items[0].offsetLeft, behavior: still ? "auto" : "smooth" });
     };
     let raf = 0;
     track.addEventListener("scroll", () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(update); }, { passive: true });
@@ -145,7 +245,7 @@
       if (!seeking) seek.value = Math.round(v * 10);
       seek.style.setProperty("--v", v + "%");
       seek.setAttribute("aria-valuetext", clock(video.currentTime) + " of " + clock(d));
-      if (d) time.textContent = clock(video.currentTime) + " / " + clock(d); // (before the file loads: the page's 0:31)
+      if (d) time.textContent = clock(video.currentTime) + " / " + clock(d); // (before the file loads: the page's own)
     };
 
     // The bar hides 2.5 s after the last touch or mouse move while playing.

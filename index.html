@@ -2,28 +2,30 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Potion Pop: sort potions, fix the shop · Free on Android</title>
-<meta name="description" content="A cute potion-sorting puzzle for Android. Play 30 Story levels and fix Mika's potion shop, chase high scores in Endless, and try a new Daily board every day. Free APK.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Potion Pop: sort potions, save the shop, catch the thief · Free on Android</title>
+<meta name="description" content="A cute potion-sorting puzzle for Android. Chapter 1: 60 levels, two boss fights against the Hooded Thief and a wrecked potion shop to fix. Plus Endless, a Daily Challenge and leaderboards. Free APK that updates itself.">
 <link rel="canonical" href="https://opiumheimer.github.io/">
-<meta name="theme-color" content="#2a1331">
+<meta name="theme-color" content="#10123d">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Potion Pop">
 <meta property="og:url" content="https://opiumheimer.github.io/">
-<meta property="og:title" content="Potion Pop: sort potions, fix the shop">
-<meta property="og:description" content="A cute sorting puzzle with a 60-level Story, an Endless high-score mode and a new Daily board every day. Free on Android.">
+<meta property="og:title" content="Potion Pop: sort potions, save the shop, catch the thief">
+<meta property="og:description" content="60 levels, two boss fights, a shop to fix and a thief on the rooftops. Free on Android, and it updates itself.">
 <meta property="og:image" content="https://opiumheimer.github.io/assets/img/og.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="The Potion Pop logo beside the game's title screen and its potion bottles with faces.">
+<meta property="og:image:alt" content="The Potion Pop logo over a moonlit rooftop, beside the game's title screen and a boss fight against the Hooded Thief.">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/icon.png">
 <link rel="apple-touch-icon" href="assets/icon.png">
 <link rel="preload" href="assets/Fredoka.ttf" as="font" type="font/ttf" crossorigin>
-<link rel="stylesheet" href="assets/css/site.css?v=187fda86">
-<script src="assets/js/site.js?v=187fda86" defer></script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": ["VideoGame", "MobileApplication"], "name": "Potion Pop", "url": "https://opiumheimer.github.io/", "description": "A cute potion-sorting puzzle with a 60-level Story Mode, an Endless high-score mode and a Daily Challenge.", "image": "https://opiumheimer.github.io/assets/img/og.jpg", "applicationCategory": "GameApplication", "gamePlatform": "Android", "operatingSystem": "Android 7.0 or later", "genre": "Puzzle", "softwareVersion": "2.0.0", "downloadUrl": "https://github.com/opiumheimer/opiumheimer.github.io/releases/download/v2.0.0/PotionPop-v2.0.0.apk", "fileSize": "109 MB", "author": {"@type": "Person", "name": "ovdruss (Russel)"}, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+<link rel="preload" href="assets/img/sky.webp" as="image" type="image/webp">
+<link rel="stylesheet" href="assets/css/site.css?v=5a84ce8f">
+<script>document.documentElement.classList.add("js")</script>
+<script src="assets/js/site.js?v=5a84ce8f" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": ["VideoGame", "MobileApplication"], "name": "Potion Pop", "url": "https://opiumheimer.github.io/", "description": "A cute potion-sorting puzzle: a 60-level Story with two boss fights and a shop to fix, an Endless high-score mode and a Daily Challenge.", "image": "https://opiumheimer.github.io/assets/img/og.jpg", "applicationCategory": "GameApplication", "gamePlatform": "Android", "operatingSystem": "Android 7.0 or later", "genre": "Puzzle", "softwareVersion": "2.0.0", "downloadUrl": "https://github.com/opiumheimer/opiumheimer.github.io/releases/download/v2.0.0/PotionPop-v2.0.0.apk", "fileSize": "109 MB", "author": {"@type": "Person", "name": "ovdruss (Russel)"}, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -33,74 +35,83 @@
   <nav aria-label="Sections">
     <ul>
       <li><a href="#story">Story</a></li>
-      <li><a href="#modes">Modes</a></li>
-      <li><a href="#screens">Screenshots</a></li>
+      <li><a href="#puzzles">Puzzles</a></li>
+      <li><a href="#boss">Boss fights</a></li>
+      <li><a href="#endless">Endless</a></li>
+      <li><a href="#trailer">Trailer</a></li>
       <li><a href="#new">What's new</a></li>
     </ul>
   </nav>
-  <a class="btn btn-sm" href="https://github.com/opiumheimer/opiumheimer.github.io/releases/download/v2.0.0/PotionPop-v2.0.0.apk" data-apk>
+  <a class="btn btn-candy btn-sm" href="https://github.com/opiumheimer/opiumheimer.github.io/releases/download/v2.0.0/PotionPop-v2.0.0.apk" data-apk>
     <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3v11m0 0-4.5-4.5M12 14l4.5-4.5M4.5 17.5v2h15v-2"/></svg>Download
   </a>
 </header>
 
 <main id="main">
 
-<section class="hero" id="top">
-  <svg class="lights" aria-hidden="true" viewBox="0 0 1200 120" preserveAspectRatio="none">
-    <path d="M0 18 Q150 92 300 30 T600 34 T900 30 T1200 20"/>
-    <g>
-      <circle cx="60" cy="44" r="9"/><circle cx="150" cy="66" r="9"/><circle cx="240" cy="50" r="9"/>
-      <circle cx="345" cy="38" r="9"/><circle cx="450" cy="60" r="9"/><circle cx="555" cy="44" r="9"/>
-      <circle cx="660" cy="38" r="9"/><circle cx="760" cy="62" r="9"/><circle cx="860" cy="44" r="9"/>
-      <circle cx="960" cy="36" r="9"/><circle cx="1060" cy="52" r="9"/><circle cx="1150" cy="34" r="9"/>
-    </g>
-  </svg>
-  <div class="bubbles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-
-  <div class="hero-copy">
-    <h1 class="logo"><span class="logo-potion">Potion</span><span class="logo-pop">Pop!</span></h1>
-    <p class="hero-line">Sort potions. Fix the shop.<br>Find out what happened.</p>
-    <p class="hero-sub">A cute sorting puzzle with a 60-level Story, an Endless high-score mode and a new Daily board every day.</p>
-    <div class="cta-row">
-      <a class="btn btn-big" href="https://github.com/opiumheimer/opiumheimer.github.io/releases/download/v2.0.0/PotionPop-v2.0.0.apk" data-apk>
-        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3v11m0 0-4.5-4.5M12 14l4.5-4.5M4.5 17.5v2h15v-2"/></svg>Download for Android
-      </a>
-      <a class="link-play" href="#trailer">
-        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M7.5 5v14l11-7z"/></svg>Watch the trailer
-      </a>
+<!-- 1. The hero: Potion Quarter at night -->
+<section class="hero" id="top" aria-labelledby="hero-h">
+  <div class="sky" aria-hidden="true">
+    <img class="clouds clouds-far" src="assets/img/clouds.webp" width="1440" height="900" alt="">
+    <img class="clouds clouds-near" src="assets/img/clouds.webp" width="1440" height="900" alt="">
+  </div>
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <a class="eyebrow" href="#updates"><b>v<span data-version-num>2.0.0</span></b> Chapter 1 is here, and the game updates itself</a>
+      <h1 id="hero-h" class="logo">
+        <img class="logo-potion" src="assets/img/logo_potion.webp" width="640" height="183" alt="Potion">
+        <img class="logo-pop" src="assets/img/logo_pop.webp" width="600" height="255" alt="Pop!">
+      </h1>
+      <p class="hero-line">Sort potions.<br>Save the shop.<br><em>Catch the thief.</em></p>
+      <p class="hero-sub">A cute sorting puzzle with a 60-level story, two boss fights on the rooftops, an Endless mode and a new Daily board every day.</p>
+      <div class="cta-row">
+        <a class="btn btn-candy btn-big" href="https://github.com/opiumheimer/opiumheimer.github.io/releases/download/v2.0.0/PotionPop-v2.0.0.apk" data-apk>
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3v11m0 0-4.5-4.5M12 14l4.5-4.5M4.5 17.5v2h15v-2"/></svg>Download for Android
+        </a>
+        <a class="btn btn-ghost" href="#trailer">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path class="fill" d="M8 5.5v13l10.5-6.5z"/></svg>Watch the trailer
+        </a>
+      </div>
+      <p class="meta"><span data-version>v2.0.0</span> · Free · <span data-size>109 MB</span> · Android 7+</p>
     </div>
-    <p class="meta"><span data-version>v2.0.0</span> · Free · <span data-size>109 MB</span> · Android 7+</p>
-    <p class="meta-note">A direct APK: no Play Store needed.</p>
-  </div>
 
-  <div class="hero-stage">
-    <div class="phone phone-back"><img src="assets/img/shop_after.webp" width="720" height="1280" alt="Mika's potion shop, fixed up: lamps lit, shelves full of bottles."></div>
-    <div class="phone phone-front"><img src="assets/img/title.webp" width="720" height="1280" alt="The Potion Pop title screen: bottles with faces on a shelf, Mika waving, and the Endless, Story and Daily buttons." fetchpriority="high"></div>
-    <img class="hero-mika" src="assets/img/mika_happy.webp" width="560" height="560" alt="">
+    <div class="hero-stage" aria-hidden="true">
+      <img class="hero-thief" src="assets/img/thief_idle.webp" width="498" height="609" alt="">
+      <div class="phone phone-hero"><img src="assets/img/title.webp" width="720" height="1280" alt="" fetchpriority="high"></div>
+      <img class="hero-mika" src="assets/img/mika_happy.webp" width="560" height="560" alt="">
+    </div>
   </div>
-  <div class="hero-shelf" aria-hidden="true">
-    <img class="bottles" src="assets/img/bottles.webp" width="1200" height="352" alt="">
-    <div class="shelf"></div>
+  <div class="town" aria-hidden="true">
+    <img class="town-roofs" src="assets/img/town.webp" width="1440" height="800" alt="">
+    <img class="town-glow" src="assets/img/town_glow.webp" width="1440" height="800" alt="">
   </div>
 </section>
 
-<section class="story" id="story" aria-labelledby="story-h">
-  <div class="awning" aria-hidden="true"></div>
-  <div class="wrap story-grid">
-    <div class="story-copy">
-      <h2 id="story-h" class="plank">The shop needs you.</h2>
-      <p>Aunt Elara left Mika the keys to her potion shop, and not much else. The lamps are dead, the windows are boarded up, and nobody will say why.</p>
-      <p>Win levels, earn stars, and fix the place up one repair at a time.</p>
-      <figure class="talk">
-        <img src="assets/img/mika_worried.webp" width="560" height="560" alt="Mika, looking worried.">
-        <blockquote><p>Dust sheets, cobwebs, boarded windows… and every lamp is dead.</p></blockquote>
-        <figcaption>Mika</figcaption>
-      </figure>
+<ul class="stickers" aria-label="At a glance">
+  <li><b>60</b> story levels</li>
+  <li><b>2</b> boss fights</li>
+  <li><b>3</b> kinds of puzzle</li>
+  <li>Endless + Daily</li>
+  <li>Updates itself</li>
+</ul>
+
+<!-- 2. The shop and the story -->
+<section class="shop drip" id="story" aria-labelledby="story-h" style="--from: var(--night-0)">
+  <div class="wrap shop-grid">
+    <div class="shop-copy reveal">
+      <p class="kicker">Story Mode · Chapter 1</p>
+      <h2 id="story-h">Aunt Elara left Mika a potion shop. And a mystery.</h2>
+      <p>The lamps are dead, the windows are boarded up and the cat is suspiciously well fed. Win levels, earn stars and fix the place up one repair at a time, while the Potion Quarter tells you what really happened here.</p>
+      <ol class="loop">
+        <li><img src="assets/ui/star.png" width="80" height="80" alt=""><span><b>Win levels</b> Up to 3 stars each</span></li>
+        <li><img src="assets/ui/icon_shop.png" width="80" height="80" alt=""><span><b>Fix the shop</b> 12 repairs, from the counter to the cellar</span></li>
+        <li><img src="assets/ui/icon_journal.png" width="80" height="80" alt=""><span><b>Hear the story</b> 23 painted scenes, no spoilers here</span></li>
+      </ol>
     </div>
 
-    <figure class="fixer">
+    <figure class="fixer reveal">
       <div class="fixer-frame" style="--split: 50%">
-        <img class="fixer-after" src="assets/img/shop_after.webp" width="720" height="1280" loading="lazy" alt="After: the shop with its lamps lit, full shelves, flowers on the counter and Mika smiling.">
+        <img class="fixer-after" src="assets/img/shop_after.webp" width="720" height="1280" loading="lazy" alt="After: the shop with its lamps lit, full shelves and Mika smiling.">
         <img class="fixer-before" src="assets/img/shop_before.webp" width="720" height="1280" loading="lazy" alt="Before: dust sheets, boarded windows, dark lamps and a worried Mika.">
         <span class="fixer-tag fixer-tag-before" aria-hidden="true">Before</span>
         <span class="fixer-tag fixer-tag-after" aria-hidden="true">After</span>
@@ -110,122 +121,243 @@
       <figcaption>Drag the star to fix the shop</figcaption>
     </figure>
   </div>
-</section>
 
-<section class="path" aria-labelledby="path-h">
-  <div class="wrap path-grid">
-    <div class="phone phone-map"><img src="assets/img/map.webp" width="720" height="1280" loading="lazy" alt="The Chapter Map: a winding street of level stops through Potion Quarter, with Mika standing on level 16."></div>
-    <div class="path-copy">
-      <h2 id="path-h">Wait, a sorting game with a story?</h2>
-      <ol class="steps">
-        <li><span class="node"><img src="assets/ui/icon_pour.png" width="80" height="80" alt=""></span><div><b>Play a level</b><span>30 in Chapter 1, each one made by hand.</span></div></li>
-        <li><span class="node"><img src="assets/ui/star.png" width="80" height="80" alt=""></span><div><b>Earn stars</b><span>Up to three a level. Fewer moves, more stars.</span></div></li>
-        <li><span class="node"><img src="assets/ui/icon_shop.png" width="80" height="80" alt=""></span><div><b>Fix the shop</b><span>Spend stars on repairs: the counter, the windows, the shelves…</span></div></li>
-        <li><span class="node"><img src="assets/ui/node_pink.png" width="80" height="80" alt=""></span><div><b>Walk the map</b><span>Each repair opens the next stretch of Potion Quarter.</span></div></li>
-        <li><span class="node"><img src="assets/ui/icon_journal.png" width="80" height="80" alt=""></span><div><b>Hear what happened</b><span>The story plays out as you go. No spoilers here.</span></div></li>
-      </ol>
-      <p class="hearts"><img src="assets/ui/heart.png" width="40" height="40" alt="">You get 5 hearts. Lose a level, lose a heart; they refill while you're away.</p>
+  <div class="wrap talk reveal">
+    <div class="phone phone-talk"><img src="assets/img/story.webp" width="720" height="1280" loading="lazy" alt="A story scene: Mika and Juno the delivery girl in the shop, Juno saying she's the second fastest in Potion Quarter."></div>
+    <div class="talk-copy">
+      <h3>Meet the neighbours</h3>
+      <p>Juno, the second-fastest delivery girl in Potion Quarter. Sable, who answers a different question than the one you asked. Mocha the calico, who sits on the important thing. Everyone knows a little more than they say.</p>
+      <div class="cast">
+        <img src="assets/img/juno_happy.webp" width="560" height="560" loading="lazy" alt="Juno">
+        <img src="assets/img/mika_surprised.webp" width="560" height="560" loading="lazy" alt="Mika">
+        <img src="assets/ui/cat_sit.png" width="128" height="160" loading="lazy" alt="Mocha the cat">
+      </div>
     </div>
   </div>
 </section>
 
-<section class="modes" id="modes" aria-labelledby="modes-h">
+<!-- 3. The three puzzles -->
+<section class="puzzles drip" id="puzzles" aria-labelledby="puzzles-h" style="--from: var(--cream)">
   <div class="wrap">
-    <h2 id="modes-h">Three kinds of puzzle</h2>
-    <p class="lead">Story levels mix three puzzles. A solver checks every level, so every one can be won with three stars.</p>
+    <p class="kicker">Three puzzles, one story</p>
+    <h2 id="puzzles-h">Pour it. Match it. Slide it.</h2>
+    <p class="lead">Story levels switch between three kinds of puzzle. A solver checks every level, so every one can be won with three stars.</p>
   </div>
-  <ul class="mode-shelf">
-    <li class="mode">
-      <div class="phone"><img src="assets/img/sort.webp" width="720" height="1280" loading="lazy" alt="A Sort level: bottles of layered drinks on shelves, some layers frozen, with a moves counter."></div>
+  <ul class="wrap mode-row">
+    <li class="mode reveal">
+      <div class="phone"><img src="assets/img/sort.webp" width="720" height="1280" loading="lazy" alt="A Sort level: bottles of layered drinks on two shelves and the goal Match colors."></div>
       <h3><img src="assets/ui/icon_pour.png" width="80" height="80" alt="">Sort</h3>
-      <p>Pour the top drink onto its match. Hit the goal before your moves run out.</p>
+      <p>Pour the top drink onto its match. Fill a bottle with one drink and it pops.</p>
     </li>
-    <li class="mode">
+    <li class="mode reveal">
       <div class="phone"><img src="assets/img/cabinet.webp" width="720" height="1280" loading="lazy" alt="A Cabinet level: two wooden cabinets with bottles on their shelves and the goal Match 3 same shapes."></div>
       <h3><img src="assets/ui/icon_cabinet.png" width="80" height="80" alt="">Cabinet</h3>
-      <p>Three bottles of the same shape pop. The back row slides forward.</p>
+      <p>Three bottles of the same shape on a shelf pop. The ones behind slide forward.</p>
     </li>
-    <li class="mode">
-      <div class="phone"><img src="assets/img/deliveries.webp" width="720" height="1280" loading="lazy" alt="A Deliveries level: bottles lying on a tiled counter, pointing different ways, with a door on each side."></div>
+    <li class="mode reveal">
+      <div class="phone"><img src="assets/img/deliveries.webp" width="720" height="1280" loading="lazy" alt="A Deliveries level: bottles lying on a counter, Juno's order tickets above it and her waiting tray."></div>
       <h3><img src="assets/ui/icon_box.png" width="80" height="80" alt="">Deliveries</h3>
-      <p>Tap a bottle and it slides till it hits something. Clear the counter.</p>
+      <p>Tap a bottle and it slides till it hits something. Fill Juno's orders before her tray overflows.</p>
     </li>
   </ul>
+  <p class="wrap powers reveal"><img src="assets/ui/heart.png" width="40" height="40" alt=""> 5 hearts that refill while you're away, and five powers to unlock along the way: Undo, Peek, Shuffle, Rescue and the Hammer.</p>
 </section>
 
-<section class="arcade" aria-labelledby="arcade-h">
-  <div class="wrap arcade-grid">
-    <div class="phone phone-endless"><img src="assets/img/endless.webp" width="720" height="1280" loading="lazy" alt="Endless mode: two shelves of bottles, the score at the top and the next drips announced, Undo and Shuffle buttons below."></div>
-    <div class="arcade-copy">
-      <h2 id="arcade-h">Endless: chase your best</h2>
-      <p>No levels, no finish line. New drinks keep dripping in, the shelf keeps growing, and every clear feeds your combo.</p>
+<!-- 4. Boss fights -->
+<section class="boss drip" id="boss" aria-labelledby="boss-h" style="--from: var(--blush)">
+  <div class="boss-sky" aria-hidden="true">
+    <img class="clouds clouds-near" src="assets/img/clouds.webp" width="1440" height="900" alt="" loading="lazy">
+  </div>
+  <div class="wrap boss-grid">
+    <div class="boss-copy reveal">
+      <span class="sticker-new">New</span>
+      <h2 id="boss-h"><img class="boss-word" src="assets/img/boss_word.webp" width="600" height="237" alt="Boss"><span>The Hooded Thief</span></h2>
+      <p>Twice a chapter the thief turns up on the rooftops: at dusk on level 30, and at midnight in a storm on level 60. Every match you make flies at them. Empty their bar before your moves run out.</p>
+      <div class="hp" data-hp aria-hidden="true">
+        <img class="hp-face" src="assets/img/hood.webp" width="160" height="160" alt="">
+        <div class="hp-bar"><span class="hp-lag"></span><span class="hp-fill"></span><b class="hp-num">3600/3600</b></div>
+        <span class="hp-hit"></span>
+      </div>
+      <ul class="tricks">
+        <li><b>Smoke</b> seals your shelves</li>
+        <li><b>Murk</b> clogs your bottles</li>
+        <li><b>Frost</b> freezes the counter</li>
+        <li><b>Act 2:</b> stealing, spiked drinks, spinning bottles</li>
+      </ul>
+      <p class="small">Each round is a checkpoint: lose one and you only replay that round. And Mocha swats every third throw right back.</p>
+    </div>
+    <div class="boss-stage reveal" aria-hidden="true">
+      <div class="phone phone-boss-a"><img src="assets/img/boss.webp" width="720" height="1280" loading="lazy" alt=""></div>
+      <div class="phone phone-boss-b"><img src="assets/img/boss_hit.webp" width="720" height="1280" loading="lazy" alt=""></div>
+      <img class="boss-thief" src="assets/img/thief_windup.webp" width="557" height="668" loading="lazy" alt="">
+    </div>
+  </div>
+  <img class="ridge" src="assets/img/ridge.webp" width="896" height="330" loading="lazy" alt="" aria-hidden="true">
+</section>
+
+<!-- 5. The case board -->
+<section class="case drip" aria-labelledby="case-h" style="--from: var(--night-1)">
+  <div class="wrap case-grid">
+    <div class="case-copy reveal">
+      <p class="kicker">The mystery</p>
+      <h2 id="case-h">Someone signed for a parcel at a locked shop.</h2>
+      <p>Every repair turns something up: a docket, a key, boot prints on the roof. Pin each clue to the case board in Mika's journal and work out who's been sneaking in at night.</p>
+      <p class="small">Chapter 1 answers some questions and opens bigger ones. New chapters arrive as updates.</p>
+    </div>
+    <div class="board reveal" data-board aria-label="Mika's case board: clues pinned with red string">
+      <img class="board-mocha" src="assets/img/mocha_peek.webp" width="400" height="291" loading="lazy" alt="Mocha the cat peeking over the board.">
+      <svg class="board-string" aria-hidden="true"></svg>
+      <ul class="clues">
+        <li class="clue" style="--r: -4deg" data-pin="0"><img class="pin" src="assets/img/pin_0.webp" width="60" height="100" alt=""><img src="assets/img/clue_full_bowl.webp" width="300" height="239" loading="lazy" alt=""><span>The full bowl</span></li>
+        <li class="clue" style="--r: 3deg" data-pin="1"><img class="pin" src="assets/img/pin_1.webp" width="60" height="100" alt=""><img src="assets/img/clue_docket.webp" width="300" height="272" loading="lazy" alt=""><span>The docket</span></li>
+        <li class="clue" style="--r: 2deg" data-pin="2"><img class="pin" src="assets/img/pin_2.webp" width="60" height="100" alt=""><img src="assets/img/clue_package.webp" width="300" height="228" loading="lazy" alt=""><span>The package</span></li>
+        <li class="clue clue-unknown" style="--r: -2deg"><span>?</span></li>
+        <li class="clue" style="--r: -3deg" data-pin="4"><img class="pin" src="assets/img/pin_3.webp" width="60" height="100" alt=""><img src="assets/img/clue_key.webp" width="200" height="371" loading="lazy" alt=""><span>The key</span></li>
+        <li class="clue" style="--r: 4deg" data-pin="3"><img class="pin" src="assets/img/pin_4.webp" width="60" height="100" alt=""><img src="assets/img/clue_boot_prints.webp" width="300" height="239" loading="lazy" alt=""><span>Boot prints</span></li>
+        <li class="clue clue-unknown" style="--r: 3deg"><span>?</span></li>
+        <li class="clue clue-unknown" style="--r: -3deg"><span>?</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 6. The streak and Mika's tasks -->
+<section class="streak drip" aria-labelledby="streak-h" style="--from: var(--wood)">
+  <div class="wrap streak-grid">
+    <div class="streak-copy reveal">
+      <p class="kicker">Keep it lit</p>
+      <h2 id="streak-h">Win in a row, start with extra moves.</h2>
+      <p>Beat new levels on the first try, one after another, and your streak grows. At 3 wins in a row your next level starts with +1 move, at 5 with +2, at 7 with +3. Lose one and the flame goes out.</p>
+      <div class="streak-row" data-streak aria-hidden="true">
+        <span class="flame"><img src="assets/img/flame.webp" width="160" height="193" alt=""><b>0</b></span>
+        <ol>
+          <li></li><li></li><li class="key" data-bonus="+1"></li><li></li><li class="key" data-bonus="+2"></li><li></li><li class="key" data-bonus="+3"></li>
+        </ol>
+      </div>
+      <h3>Mika's tasks</h3>
+      <p>Mika's list shows the next repair and the levels it takes, so you always know what you're playing for.</p>
+    </div>
+    <div class="streak-stage reveal">
+      <div class="phone phone-preview"><img src="assets/img/preview.webp" width="720" height="1280" loading="lazy" alt="Level 16's preview on the map: a streak of 4, Streak bonus: +1 moves, and the Play button."></div>
+      <div class="phone phone-tasks"><img src="assets/img/tasks.webp" width="720" height="1280" loading="lazy" alt="Mika's Tasks: the delivery window to polish, levels 16 to 20 with their stars, and Spend 5 stars."></div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. Endless + Daily -->
+<section class="endless drip" id="endless" aria-labelledby="endless-h" style="--from: var(--cream)">
+  <div class="wrap endless-grid">
+    <div class="phone phone-endless reveal"><img src="assets/img/endless.webp" width="720" height="1280" loading="lazy" alt="Endless mode: two shelves of bottles, the score and the next drips announced, Undo and Shuffle buttons."></div>
+    <div class="endless-copy reveal">
+      <img class="endless-icon" src="assets/img/icon_endless.webp" width="199" height="126" alt="">
+      <p class="kicker">Endless mode</p>
+      <h2 id="endless-h">How long can you keep the shelf alive?</h2>
+      <p>No levels, no finish line. New drinks drip in every move, empty bottles get thirsty, and the shop grows around you as your score climbs.</p>
       <ul class="chips">
         <li>Combos</li>
-        <li>Sugar Rush: double points</li>
-        <li>Undo &amp; Shuffle</li>
-        <li>More bottles as you score</li>
+        <li>Sugar Rush: ×2 points</li>
+        <li>Brimming: ×1.5 on a full shelf</li>
+        <li>Up to 14 bottles</li>
       </ul>
-      <div class="daily">
-        <img src="assets/ui/icon_daily.svg" width="112" height="116" alt="">
-        <div>
-          <h3>Daily Challenge</h3>
-          <p>One board, the same for everyone, new every day. Keep your streak going.</p>
+      <div class="side-cards">
+        <div class="side-card">
+          <img src="assets/img/icon_daily.webp" width="132" height="136" alt="">
+          <div><h3>Daily Challenge</h3><p>One board, the same for everyone, new every day.</p></div>
+        </div>
+        <div class="side-card">
+          <img src="assets/img/crown.webp" width="106" height="69" alt="">
+          <div><h3>Leaderboards</h3><p>This week's best Endless runs and today's Daily. Tap the crown on the title screen.</p></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="theater" id="trailer" aria-labelledby="trailer-h">
+<!-- 8. The trailer -->
+<section class="theater drip" id="trailer" aria-labelledby="trailer-h" style="--from: var(--candy)">
   <div class="wrap theater-grid">
-    <div class="theater-copy">
+    <div class="theater-copy reveal">
+      <p class="kicker">30 seconds</p>
       <h2 id="trailer-h">Watch it pop</h2>
-      <p>Thirty seconds of the shop, the three puzzles and a Sugar Rush. Sound on.</p>
+      <p>Half a minute of Potion Pop: the shop, the puzzles and the rooftops. Sound on.</p>
     </div>
-    <div class="case">
-      <div class="phone phone-video player" data-player>
-        <video src="assets/trailer.mp4" poster="assets/img/trailer_poster.webp" width="1080" height="1920" preload="none" playsinline controls aria-label="Potion Pop trailer"></video>
-        <button class="big-play" type="button" aria-label="Play the trailer" hidden>
+    <div class="phone phone-video player reveal" data-player>
+      <video src="assets/trailer.mp4" poster="assets/img/trailer_poster.webp" width="1080" height="1920" preload="none" playsinline controls aria-label="Potion Pop trailer"></video>
+      <button class="big-play" type="button" aria-label="Play the trailer" hidden>
+        <svg class="i-play" aria-hidden="true" viewBox="0 0 24 24"><path d="M7.5 5v14l11-7z"/></svg>
+        <span class="spin" aria-hidden="true"></span>
+      </button>
+      <div class="bar" hidden>
+        <button class="pbtn" type="button" data-act="play" aria-label="Play">
           <svg class="i-play" aria-hidden="true" viewBox="0 0 24 24"><path d="M7.5 5v14l11-7z"/></svg>
-          <span class="spin" aria-hidden="true"></span>
+          <svg class="i-pause" aria-hidden="true" viewBox="0 0 24 24"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg>
         </button>
-        <div class="bar" hidden>
-          <button class="pbtn" type="button" data-act="play" aria-label="Play">
-            <svg class="i-play" aria-hidden="true" viewBox="0 0 24 24"><path d="M7.5 5v14l11-7z"/></svg>
-            <svg class="i-pause" aria-hidden="true" viewBox="0 0 24 24"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg>
-          </button>
-          <input class="seek" type="range" min="0" max="1000" step="1" value="0" aria-label="Seek" style="--v: 0%">
-          <span class="time" aria-hidden="true">0:00 / 0:31</span>
-          <button class="pbtn" type="button" data-act="mute" aria-label="Mute">
-            <svg class="i-sound" aria-hidden="true" viewBox="0 0 24 24"><path d="M4 9.5h4L13 5v14l-5-4.5H4z"/><path class="w" d="M16 9a4.5 4.5 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11"/></svg>
-            <svg class="i-muted" aria-hidden="true" viewBox="0 0 24 24"><path d="M4 9.5h4L13 5v14l-5-4.5H4z"/><path class="w" d="M16.5 9.5l5 5m0-5-5 5"/></svg>
-          </button>
-          <button class="pbtn" type="button" data-act="full" aria-label="Full screen">
-            <svg aria-hidden="true" viewBox="0 0 24 24"><path class="w" d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/></svg>
-          </button>
-        </div>
+        <input class="seek" type="range" min="0" max="1000" step="1" value="0" aria-label="Seek" style="--v: 0%">
+        <span class="time" aria-hidden="true">0:00 / 0:31</span>
+        <button class="pbtn" type="button" data-act="mute" aria-label="Mute">
+          <svg class="i-sound" aria-hidden="true" viewBox="0 0 24 24"><path d="M4 9.5h4L13 5v14l-5-4.5H4z"/><path class="w" d="M16 9a4.5 4.5 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11"/></svg>
+          <svg class="i-muted" aria-hidden="true" viewBox="0 0 24 24"><path d="M4 9.5h4L13 5v14l-5-4.5H4z"/><path class="w" d="M16.5 9.5l5 5m0-5-5 5"/></svg>
+        </button>
+        <button class="pbtn" type="button" data-act="full" aria-label="Full screen">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path class="w" d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/></svg>
+        </button>
       </div>
     </div>
   </div>
 </section>
 
-<section class="gallery" id="screens" aria-labelledby="screens-h">
+<!-- 9. v2.0.0: it updates itself -->
+<section class="updates drip" id="updates" aria-labelledby="updates-h" style="--from: var(--night-0)">
+  <div class="wrap updates-grid">
+    <div class="phone phone-update reveal"><img src="assets/img/update.webp" width="720" height="1280" loading="lazy" alt="The in-game update screen: the logo, Mika smiling and a card reading New potions are brewing, with a download bar at 41 percent."></div>
+    <div class="updates-copy reveal">
+      <p class="kicker">New in v2.0.0</p>
+      <h2 id="updates-h">Install it once. It keeps itself fresh.</h2>
+      <ul class="perks">
+        <li>
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3v11m0 0-4.5-4.5M12 14l4.5-4.5M4.5 17.5v2h15v-2"/></svg>
+          <div><h3>Updates arrive in the game</h3><p>New levels and fixes download the next time you open Potion Pop. No more APKs to install.</p></div>
+        </li>
+        <li>
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 2h-15zM10 20.5h4"/></svg>
+          <div><h3>A nudge when your hearts are full</h3><p>Optional reminders, plus news from me now and then. Turn them off in Android's settings any time.</p></div>
+        </li>
+        <li>
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 12h6M14 12h6M4 7h16M4 17h16"/></svg>
+          <div><h3>Two download mirrors</h3><p>If one is slow or down, the game takes the other. An update takes seconds.</p></div>
+        </li>
+      </ul>
+      <p class="note">Coming from an older version? Install v2.0.0 <b>over it</b> (don't uninstall first) and your progress carries over.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 10. Screenshots -->
+<section class="gallery drip" id="screens" aria-labelledby="screens-h" style="--from: var(--lilac)">
   <div class="wrap gallery-head">
     <h2 id="screens-h">Screenshots</h2>
     <div class="gallery-nav">
       <button class="round" type="button" data-go="-1" aria-label="Previous screenshot"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
-      <span class="count" aria-live="polite"><b data-at>1</b> / <span data-total>8</span></span>
+      <span class="count" aria-live="polite"><b data-at>1</b> / <span data-total>16</span></span>
       <button class="round" type="button" data-go="1" aria-label="Next screenshot"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
     </div>
   </div>
   <ul class="track" tabindex="0" aria-label="Screenshots (scroll sideways)">
-    <li><button class="shot" type="button" aria-label="Enlarge: The title screen"><span class="phone"><img src="assets/img/title.webp" width="720" height="1280" loading="lazy" alt="The title screen: bottles with faces on a shelf, Mika waving, and the Endless, Story and Daily buttons."></span></button><p>The title screen</p></li>
+    <li><button class="shot" type="button" aria-label="Enlarge: The title screen"><span class="phone"><img src="assets/img/title.webp" width="720" height="1280" loading="lazy" alt="The title screen: the painted Potion Pop logo, bottles with faces on a shelf, Mika waving, and the Endless, Story and Daily buttons."></span></button><p>The title screen</p></li>
+    <li><button class="shot" type="button" aria-label="Enlarge: Boss fight: the Hooded Thief"><span class="phone"><img src="assets/img/boss.webp" width="720" height="1280" loading="lazy" alt="Level 60&#x27;s boss fight: the Hooded Thief on a moonlit rooftop over two cabinets of bottles, the BOSS banner and his taunt, You again? Ha!"></span></button><p>Boss fight: the Hooded Thief</p></li>
+    <li><button class="shot" type="button" aria-label="Enlarge: Every pop hits him"><span class="phone"><img src="assets/img/boss_hit.webp" width="720" height="1280" loading="lazy" alt="A boss round of Sort: a bottle flies off the shelf and hits the thief for 120, his health bar dropping."></span></button><p>Every pop hits him</p></li>
     <li><button class="shot" type="button" aria-label="Enlarge: Mika&#x27;s shop, fixed up"><span class="phone"><img src="assets/img/shop_after.webp" width="720" height="1280" loading="lazy" alt="The potion shop fully repaired: lamps lit, shelves of bottles, flowers on the counter, Mika smiling."></span></button><p>Mika&#x27;s shop, fixed up</p></li>
     <li><button class="shot" type="button" aria-label="Enlarge: Cabinet: match three shapes"><span class="phone"><img src="assets/img/cabinet.webp" width="720" height="1280" loading="lazy" alt="A Cabinet level: two wooden cabinets of bottles with faces and the goal Match 3 same shapes."></span></button><p>Cabinet: match three shapes</p></li>
-    <li><button class="shot" type="button" aria-label="Enlarge: Sort: pour and pop"><span class="phone"><img src="assets/img/sort.webp" width="720" height="1280" loading="lazy" alt="A Sort level: layered drinks in bottles on shelves, some layers frozen, 21 moves left."></span></button><p>Sort: pour and pop</p></li>
-    <li><button class="shot" type="button" aria-label="Enlarge: Deliveries: slide them out"><span class="phone"><img src="assets/img/deliveries.webp" width="720" height="1280" loading="lazy" alt="A Deliveries level: bottles lying on a tiled counter, pointing different ways, with doors on the sides."></span></button><p>Deliveries: slide them out</p></li>
-    <li><button class="shot" type="button" aria-label="Enlarge: The Chapter Map"><span class="phone"><img src="assets/img/map.webp" width="720" height="1280" loading="lazy" alt="The Chapter Map: a winding street of level stops through Potion Quarter, Mika on level 16."></span></button><p>The Chapter Map</p></li>
-    <li><button class="shot" type="button" aria-label="Enlarge: Endless"><span class="phone"><img src="assets/img/endless.webp" width="720" height="1280" loading="lazy" alt="Endless mode: two shelves of bottles, the score, the next drips, Undo and Shuffle."></span></button><p>Endless</p></li>
+    <li><button class="shot" type="button" aria-label="Enlarge: Sort: pour and pop"><span class="phone"><img src="assets/img/sort.webp" width="720" height="1280" loading="lazy" alt="A Sort level: layered drinks in bottles on two shelves and the goal Match colors."></span></button><p>Sort: pour and pop</p></li>
+    <li><button class="shot" type="button" aria-label="Enlarge: Deliveries: fill Juno&#x27;s orders"><span class="phone"><img src="assets/img/deliveries.webp" width="720" height="1280" loading="lazy" alt="A Deliveries level: bottles lying on a counter, Juno&#x27;s order tickets on a string and her waiting tray."></span></button><p>Deliveries: fill Juno&#x27;s orders</p></li>
+    <li><button class="shot" type="button" aria-label="Enlarge: The story, in painted scenes"><span class="phone"><img src="assets/img/story.webp" width="720" height="1280" loading="lazy" alt="A story scene: Mika and Juno in the shop, Juno saying she&#x27;s the second fastest in Potion Quarter."></span></button><p>The story, in painted scenes</p></li>
+    <li><button class="shot" type="button" aria-label="Enlarge: The case board"><span class="phone"><img src="assets/img/clues.webp" width="720" height="1280" loading="lazy" alt="The journal&#x27;s case board: clue pictures pinned on cork with red string, question marks for the clues still to find, Mocha peeking over it."></span></button><p>The case board</p></li>
+    <li><button class="shot" type="button" aria-label="Enlarge: The Chapter Map"><span class="phone"><img src="assets/img/map.webp" width="720" height="1280" loading="lazy" alt="The Chapter Map: a winding street of level stops through Potion Quarter, Mika on level 16, her task card at the bottom."></span></button><p>The Chapter Map</p></li>
+    <li><button class="shot" type="button" aria-label="Enlarge: A level&#x27;s preview, with your streak"><span class="phone"><img src="assets/img/preview.webp" width="720" height="1280" loading="lazy" alt="Level 16&#x27;s preview: a Cabinet level, 9 moves, a win streak of 4 and the Streak bonus: +1 moves, and the Play button."></span></button><p>A level&#x27;s preview, with your streak</p></li>
+    <li><button class="shot" type="button" aria-label="Enlarge: Level complete: the streak grows"><span class="phone"><img src="assets/img/streak.webp" width="720" height="1280" loading="lazy" alt="The Level Complete panel: three stars, coins, the win streak at 5 and Next level: +2 moves."></span></button><p>Level complete: the streak grows</p></li>
+    <li><button class="shot" type="button" aria-label="Enlarge: Mika&#x27;s tasks"><span class="phone"><img src="assets/img/tasks.webp" width="720" height="1280" loading="lazy" alt="Mika&#x27;s Tasks: polish the delivery window, the levels it takes with their stars, and Spend 5 stars."></span></button><p>Mika&#x27;s tasks</p></li>
+    <li><button class="shot" type="button" aria-label="Enlarge: Endless"><span class="phone"><img src="assets/img/endless.webp" width="720" height="1280" loading="lazy" alt="Endless mode: two shelves of bottles, the score at 12,480, the next drip announced, Undo and Shuffle."></span></button><p>Endless</p></li>
+    <li><button class="shot" type="button" aria-label="Enlarge: Updates download in the game"><span class="phone"><img src="assets/img/update.webp" width="720" height="1280" loading="lazy" alt="The in-game update screen: the logo, Mika smiling and New potions are brewing! with a download bar at 41 percent."></span></button><p>Updates download in the game</p></li>
     <li><button class="shot" type="button" aria-label="Enlarge: The shop, the day Mika arrives"><span class="phone"><img src="assets/img/shop_before.webp" width="720" height="1280" loading="lazy" alt="The potion shop before any repairs: dust sheets, boarded windows, dark lamps."></span></button><p>The shop, the day Mika arrives</p></li>
   </ul>
   <div class="progress" aria-hidden="true"><span></span></div>
@@ -238,36 +370,13 @@
   </dialog>
 </section>
 
-<section class="online" aria-labelledby="online-h">
-  <div class="wrap">
-    <h2 id="online-h">Online, when you want it</h2>
-    <p class="lead">Potion Pop plays fine offline. Connect and you get a little more.</p>
-  </div>
-  <div class="rod" aria-hidden="true"></div>
-  <ul class="signs">
-    <li class="sign">
-      <img src="assets/ui/crown.svg" width="60" height="46" alt="">
-      <h3>Leaderboards</h3>
-      <p>This week's best Endless runs and today's Daily. Tap the crown on the title screen.</p>
-    </li>
-    <li class="sign">
-      <svg class="cloud" aria-hidden="true" viewBox="0 0 64 44"><path d="M17 38h31a11 11 0 0 0 1-22 15 15 0 0 0-28-3A12.5 12.5 0 0 0 17 38z"/></svg>
-      <h3>Keep your potions</h3>
-      <p>Sign in with Google in Settings and your progress comes with you to a new phone.</p>
-    </li>
-    <li class="sign">
-      <img src="assets/ui/coin.png" width="60" height="60" alt="">
-      <h3>Update alerts</h3>
-      <p>When a new version is out, the game tells you, so you never miss a chapter.</p>
-    </li>
-  </ul>
-</section>
-
-<section class="news" id="new" aria-labelledby="new-h">
-  <div class="wrap news-grid">
-    <article class="label">
+<!-- 11. What's new + download -->
+<section class="get drip" id="download" aria-labelledby="new-h" style="--from: var(--night-1)">
+  <div class="wrap get-grid">
+    <article class="notes-card reveal" id="new">
       <h2 id="new-h">What's new in <span data-version>v2.0.0</span></h2>
       <p class="date" data-date>Released 11 October 2026</p>
+      <p class="notes-lead" data-lead>The long-lasting version: install it over your old one (don&#x27;t uninstall) and your progress carries over.</p>
       <ul class="notes" data-notes>
         <li>Updates now download inside the game: no more APKs to install</li>
         <li>Reminders when your hearts are full, plus news from me now and then (you can turn them off in Android&#x27;s settings)</li>
@@ -276,47 +385,65 @@
         <li>Endless, the Daily Challenge, leaderboards and cloud save (sign in with Google in Settings)</li>
       </ul>
       <a class="text-link" href="https://github.com/opiumheimer/opiumheimer.github.io/releases">All versions on GitHub</a>
+      <img class="notes-mika" src="assets/img/mika_determined.webp" width="560" height="560" loading="lazy" alt="">
     </article>
-    <img class="news-mika" src="assets/img/mika_determined.webp" width="560" height="560" loading="lazy" alt="Mika, rolling up her sleeves.">
-  </div>
-</section>
 
-<section class="get" id="download" aria-labelledby="get-h">
-  <div class="wrap get-inner">
-    <img class="get-cat" src="assets/ui/cat_sit.png" width="240" height="300" loading="lazy" alt="The shop's calico cat, sitting.">
-    <h2 id="get-h">Ready to pop some potions?</h2>
-    <a class="btn btn-big" href="https://github.com/opiumheimer/opiumheimer.github.io/releases/download/v2.0.0/PotionPop-v2.0.0.apk" data-apk>
-      <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3v11m0 0-4.5-4.5M12 14l4.5-4.5M4.5 17.5v2h15v-2"/></svg>Download Potion Pop
-    </a>
-    <p class="meta"><span data-version>v2.0.0</span> · Android 7+ · Free · <span data-size>109 MB</span></p>
-    <p class="meta-note">The only ads are the ones you choose to watch for a bonus.</p>
+    <div class="get-main reveal">
+      <h2 class="get-h">Ready to pop some potions?</h2>
+      <a class="btn btn-candy btn-big" href="https://github.com/opiumheimer/opiumheimer.github.io/releases/download/v2.0.0/PotionPop-v2.0.0.apk" data-apk>
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3v11m0 0-4.5-4.5M12 14l4.5-4.5M4.5 17.5v2h15v-2"/></svg>Download Potion Pop
+      </a>
+      <p class="meta"><span data-version>v2.0.0</span> · Android 7+ · Free · <span data-size>109 MB</span></p>
+      <p class="meta-note">A direct APK from GitHub: no Play Store needed. Free to play, with a short ad now and then between levels, and optional ones you can watch for a bonus.</p>
 
-    <details class="install">
-      <summary>Installing the APK</summary>
-      <ol>
-        <li>Tap <b>Download</b> on your Android phone to get <b>PotionPop.apk</b>.</li>
-        <li>Open the downloaded file.</li>
-        <li>If Android asks, allow your browser to install apps, then come back.</li>
-        <li>Follow Android's install screen and tap <b>Install</b>.</li>
-        <li>Already playing? Install the new version over the old one: your progress stays.</li>
-      </ol>
-      <h3>About the Play Protect message</h3>
-      <p>Because Potion Pop is distributed outside Google Play for now, Android or Play Protect may show an extra warning or ask you to confirm the install. Only download the APK from this page.</p>
-      <h3>What the app asks Android for</h3>
-      <ul>
-        <li>Internet and network state: cloud save, leaderboards, the Daily board and ads.</li>
-        <li>Vibration: a little buzz when bottles pop (you can turn it off).</li>
-        <li>The advertising ID, basic phone state, wake lock and a foreground service, added by Google's ads and services libraries.</li>
-      </ul>
-      <p>None of these are the permissions Android asks you about: no contacts, photos, location, camera or microphone. Details in the <a class="text-link" href="privacy/">privacy policy</a>.</p>
-    </details>
+      <div class="faq">
+        <details>
+          <summary>How do I install the APK?</summary>
+          <ol>
+            <li>Tap <b>Download</b> on your Android phone.</li>
+            <li>Open the downloaded file. If Android asks, allow your browser to install apps, then come back.</li>
+            <li>Tap <b>Install</b>. Already playing? Install over your old version, without uninstalling: your progress stays.</li>
+            <li>That's the last install: from now on the game updates itself.</li>
+          </ol>
+          <p class="sha" data-sha-row >Want to check the file? Its SHA-256 is <code data-sha>4f045ce98a7f58d8e09786636cf49c0f4b91e6653a3160050d16f30008121cdf</code></p>
+        </details>
+        <details>
+          <summary>Android or Play Protect shows a warning</summary>
+          <p>Potion Pop isn't on Google Play yet, so Android may ask you to confirm an install from outside the store. Only download the APK from this page.</p>
+        </details>
+        <details>
+          <summary>Do I need to be online?</summary>
+          <p>No, it plays offline. Online you get updates, the Daily board, leaderboards and cloud save (sign in with Google in Settings to take your progress to a new phone).</p>
+        </details>
+        <details>
+          <summary>What does the app ask Android for?</summary>
+          <ul>
+            <li>Internet and network state: updates, cloud save, leaderboards, the Daily board and ads.</li>
+            <li>Notifications: the heart reminders (Android 13 and newer asks you first), and starting after a reboot so they still arrive.</li>
+            <li>Vibration: a little buzz when bottles pop (you can turn it off).</li>
+            <li>The advertising ID and a few more, added by Google's ads libraries.</li>
+          </ul>
+          <p>No contacts, photos, location, camera or microphone. Details in the <a class="text-link" href="privacy/">privacy policy</a>.</p>
+        </details>
+        <details>
+          <summary>iPhone?</summary>
+          <p>Android only for now.</p>
+        </details>
+      </div>
+    </div>
   </div>
 </section>
 
 </main>
 
+<div class="dock" data-dock hidden>
+  <img src="assets/icon.png" width="44" height="44" alt="">
+  <p><b>Potion Pop</b><span><span data-version>v2.0.0</span> · Free</span></p>
+  <a class="btn btn-candy btn-sm" href="https://github.com/opiumheimer/opiumheimer.github.io/releases/download/v2.0.0/PotionPop-v2.0.0.apk" data-apk>Download</a>
+</div>
+
 <footer class="foot">
-  <div class="shelf" aria-hidden="true"></div>
+  <img class="foot-bottles" src="assets/img/bottles.webp" width="1200" height="352" loading="lazy" alt="">
   <p><b>Potion Pop</b> · Made by ovdruss (Russel) with Godot</p>
   <p><a href="privacy/">Privacy policy</a> · <a href="mailto:jr@ammen.dev">jr@ammen.dev</a> · <a href="https://github.com/opiumheimer/opiumheimer.github.io/releases">Releases</a></p>
 </footer>
